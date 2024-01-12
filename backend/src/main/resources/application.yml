@@ -1,0 +1,15 @@
+server:
+  port: 8765
+spring:
+  profiles:
+    active: dev
+  application:
+    name: meow
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+beetlsql:
+  sqlManagers: sqlManager1
+  sqlManager1:
+    ds: dataSource
+    basePackage: com.oz.meow.mapper
+    dbStyle: com.oz.config.MysqlStyle
