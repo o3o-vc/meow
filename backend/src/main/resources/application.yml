@@ -12,4 +12,4 @@ beetlsql:
   sqlManager1:
     ds: dataSource
     basePackage: com.oz.meow.mapper
-    dbStyle: com.oz.config.MysqlStyle
+    dbStyle: com.oz.meow.config.MysqlStyle
