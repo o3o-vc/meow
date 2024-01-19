@@ -1,7 +1,7 @@
 
 dependencies {
     api(project(":domain"))
-    api("com.ibeetl:sql-springboot-starter:3.27.2-RELEASE")
-    runtimeOnly("mysql:mysql-connector-java:8.0.33")
-    api("com.ibeetl:sql-accelerator:3.27.2-RELEASE")
+    api("com.ibeetl:sql-springboot-starter:${rootProject.extra["beetlsql.version"]}")
+    runtimeOnly("mysql:mysql-connector-java:${rootProject.extra["mysql.connector.version"]}")
+    api("com.ibeetl:sql-accelerator:${rootProject.extra["beetlsql.version"]}")
 }

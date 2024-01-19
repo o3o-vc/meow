@@ -1,10 +1,20 @@
 plugins {
+    val kotlinVersion = "2.0.0-Beta3"
+
     kotlin("jvm") version kotlinVersion
-    id("org.springframework.boot") version springbootVersion apply false
+    kotlin("plugin.spring") version kotlinVersion apply false
+    id("org.springframework.boot") version "3.2.1" apply false
     id("io.spring.dependency-management") version "1.1.4"
     kotlin("plugin.noarg") version kotlinVersion
 }
+
+val meowVersion by extra("1.0-SNAPSHOT")
 buildscript {
+    extra.apply {
+        set("beetlsql.version", "3.27.2-RELEASE")
+        set("mysql.connector.version", "8.0.33")
+        set("hutool.version", "5.8.24")
+    }
     dependencies {
 //        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
 //        classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")

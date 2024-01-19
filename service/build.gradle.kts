@@ -1,5 +1,5 @@
 
 dependencies {
     api(project(":repository"))
-    implementation("cn.hutool:hutool-all:5.8.24")
+    implementation("cn.hutool:hutool-all:${rootProject.extra["hutool.version"]}")
 }

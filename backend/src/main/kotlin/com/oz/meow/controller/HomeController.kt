@@ -18,26 +18,13 @@ import org.springframework.web.bind.annotation.RestController
 class HomeController(val userService: UserService, val userMapper: UserMapper) {
     @GetMapping("sayHi")
     fun sayHi(): PageResult<User> {
-        val menu = Menu("ye")
-        menu.id = 1
-        menu.parentId = 0
-        val menu1 = Menu("ha")
-        menu1.id = 2
-        menu1.parentId = 1
-        val subs = mutableListOf<Menu>()
-        menu.children = subs
-        subs.add(menu1)
-        val om: ObjectMapper = ObjectMapper()
-        println(om.writeValueAsString(menu))
-        val list = mutableListOf(menu, menu1)
-        println(om.writeValueAsString(Tree.trees(list) {
-            if (it is Menu) {
-                Cmd(it.title).apply {
-                    id = it.id.toString()
-                }
-            }
-            it
-        }))
+        val user = User().apply {
+            name = "meow"
+            username = "meow"
+            age = 20
+        }
+        userMapper.insert(user)
+        println(user)
         var page = userMapper.page(PageInfo(1, 2), "2")
         return userService.page(PageInfo(2, 2), User(status = UserStatus.ENABLE))
     }

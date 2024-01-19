@@ -1,4 +1,4 @@
 
 dependencies {
-    compileOnly("com.ibeetl:sql-core:3.27.2-RELEASE")
+    compileOnly("com.ibeetl:sql-core:${rootProject.extra["beetlsql.version"]}")
 }

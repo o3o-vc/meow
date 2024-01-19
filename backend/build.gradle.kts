@@ -1,6 +1,6 @@
 plugins {
     id("org.springframework.boot")
-    kotlin("plugin.spring") version kotlinVersion
+    kotlin("plugin.spring")
 }
 
 
